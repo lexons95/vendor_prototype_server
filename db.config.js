@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-
+require('dotenv').config()
 // const connection = mysql.createConnection({
 //     host: 'localhost',
 //     user: 'root',
@@ -8,10 +8,10 @@ const mysql = require('mysql2');
 // });
 
 const connection = mysql.createConnection({
-    host: "prototype-demo-owc.cysslfqkzazy.ap-southeast-1.rds.amazonaws.com",
-    user: 'root',
-    password: '12345678',
-    database: 'owc_db'
+    host: process.env.host,
+    user: process.env.user,
+    password: process.env.password,
+    database: process.env.database
 });
 
 connection.connect(function(err) {

@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+require('dotenv').config()
 
 var productsRouter = require('./src/products');
 var productOptionsRouter = require('./src/productOptions');
@@ -24,7 +25,7 @@ app.use('/salesproducts', salesProductsRouter);
 app.use('/campaigns', campaignsRouter);
 app.use('/campaignproducts', campaignProductsRouter);
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
